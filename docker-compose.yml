@@ -19,7 +19,7 @@ services:
       - confluent
 
   broker:
-    image: confluentinc/cp-server:7.4.0
+    image:  confluentinc/cp-server:latest
     hostname: broker
     container_name: broker
     depends_on:
@@ -104,7 +104,7 @@ services:
       retries: 5
 
   webserver:
-    image: apache/airflow:2.6.0-python3.9
+    image: apache/airflow:latest
     command: webserver
     entrypoint: ["/opt/airflow/script/entrypoint.sh"]
     depends_on:
